@@ -13,13 +13,13 @@
     /// </summary>
     public class StackByPriorityQueue
     {
-        private (int priority, int? value)[] queue;
         private int count;
+        private PriorityElement[] queue;
         private const int InitialCapacity = 4;
 
         public StackByPriorityQueue()
         {
-            queue = new (int, int?)[InitialCapacity];
+            queue = new PriorityElement[InitialCapacity];
             count = 0;
         }
 
@@ -29,7 +29,7 @@
             {
                 ResizeArray();
             }
-            queue[count] = (count, element); // Assign a unique priority based on insertion order
+            queue[count] = new PriorityElement() { Priority = count, Value = element }; // Assign a unique priority based on insertion order
             count++;
         }
 
@@ -41,43 +41,17 @@
                 throw new InvalidOperationException("Empty stack.");
             }
 
-            int index = FindMaxPriorityIndex(); // Find the element with the highest priority
-            (int priority, int? element) = queue[index];
-
-            // Shift elements to fill the gap left by removing the top item
-            for (int i = index; i < count - 1; i++)
-            {
-                queue[i] = queue[i + 1];
-            }
-
-            queue[count - 1] = default((int, int?)); // Clear the last element
+            int? element = queue[count - 1].Value; // Get the last element
+            queue[count - 1] = new PriorityElement(); // Clear the last element
             count--;
 
             return element;
         }
 
-        private int FindMaxPriorityIndex()
-        {
-            if (count == 0)
-            {
-                throw new InvalidOperationException("Empty stack.");
-            }
-
-            int maxIndex = 0;
-            for (int i = 1; i < count; i++)
-            {
-                if (queue[i].priority > queue[maxIndex].priority)
-                {
-                    maxIndex = i;
-                }
-            }
-            return maxIndex;
-        }
-
         private void ResizeArray()
         {
             int newCapacity = queue.Length * 2; // Double the size of the array
-            var newArray = new (int, int?)[newCapacity];
+            var newArray = new PriorityElement[newCapacity];
             Array.Copy(queue, newArray, count); // Copy existing elements to the new array
             queue = newArray;
         }
@@ -90,6 +64,14 @@
         public bool IsEmpty()
         {
             return count == 0;
+        }
+
+        private class PriorityElement
+        {
+            public int Priority { get; set; }
+
+            public int? Value { get; set; }
+
         }
     }
 }
