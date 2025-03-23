@@ -91,15 +91,4 @@
         public List<int> GetTrackingMaximumElementsList() => trackingMaxElements;
     }
 
-    /// <summary>
-    /// Custom Stack interface
-    /// </summary>
-    public interface IStack<T>
-    {
-        void Push(T item);
-        T Pop();
-        T Peek();
-        T Size();
-        bool IsEmpty();
-    }
 }

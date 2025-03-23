@@ -21,7 +21,7 @@ namespace DevExercises
             }
             else
             {
-                stack = extendStackSize();
+                stack = ExtendStackSize();
                 stack[stackTopIndex++] = element;
             }
         }

@@ -33,7 +33,6 @@
             count++;
         }
 
-
         public int? Pop()
         {
             if (IsEmpty())
@@ -47,7 +46,6 @@
 
             return element;
         }
-
         private void ResizeArray()
         {
             int newCapacity = queue.Length * 2; // Double the size of the array
