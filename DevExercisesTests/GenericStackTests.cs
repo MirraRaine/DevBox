@@ -2,6 +2,9 @@
 
 namespace DevExercisesTests
 {
+    /// <summary>
+    /// Test class to validate functionality of the <see cref="GenericStackT"/> class.
+    /// </summary>
     [TestClass]
     public class GenericStackTests
     {

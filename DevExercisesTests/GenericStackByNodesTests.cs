@@ -1,5 +1,8 @@
 ﻿using DevExercises;
 
+/// <summary>
+/// Test class to validate functionality of the <see cref="GenericStackByNodes"/> class.
+/// </summary>
 [TestClass]
 public class GenericStackByNodesTests
 {
