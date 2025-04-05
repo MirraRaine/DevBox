@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevExercises", "DevExercise
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevExercisesTests", "..\DevExercisesTests\DevExercisesTests.csproj", "{5D00FFC9-81F8-4BFB-AE52-E180D210C7BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityHomeworks", "..\UnivercityHomeworks\UniversityHomeworks.csproj", "{43EFF358-16CA-4117-ACA7-7AAD8B16BFC8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityHomeworks", "..\UniversityHomeworks\UniversityHomeworks.csproj", "{43EFF358-16CA-4117-ACA7-7AAD8B16BFC8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityHomeworksTests", "..\UniversityHomeworksTests\UniversityHomeworksTests.csproj", "{2A235437-D41E-4FBC-AEA5-FC1E013F2578}"
 EndProject
