@@ -1,4 +1,4 @@
-﻿namespace UniversityHomeworks
+﻿namespace UniversityHomeworks.ObjectModellingClass
 {
     public class Hw1_StaticVsInstance
     {

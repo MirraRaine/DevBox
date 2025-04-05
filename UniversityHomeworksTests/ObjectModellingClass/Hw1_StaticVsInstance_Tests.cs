@@ -1,6 +1,6 @@
-﻿using UniversityHomeworks;
+﻿using UniversityHomeworks.ObjectModellingClass;
 
-namespace UniversityHomeworksTests
+namespace UniversityHomeworksTests.ObjectModellingClass
 {
     /// <summary>
     /// Test class to validate functionality of the <see cref="Hw1_StaticVsInstance"/> class.
