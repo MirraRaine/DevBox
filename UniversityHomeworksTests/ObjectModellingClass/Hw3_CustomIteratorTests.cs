@@ -115,7 +115,7 @@ namespace UniversityHomeworksTests.ObjectModellingClass
         {
         }
         /*
-        public static void main(String[] args)
+        public static void main(string[] args)
         {
             //Node nod11 = new Node(11,null,null);
 

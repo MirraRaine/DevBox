@@ -1,0 +1,20 @@
+﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.CommandV2
+{
+    public class WindowsFileSystemReceiver : FileSystemReceiver
+    {
+        public void OpenFile()
+        {
+            Console.WriteLine("Opening file in Windows OS");
+        }
+
+        public void WriteFile()
+        {
+            Console.WriteLine("Writing file in Windows OS");
+        }
+
+        public void CloseFile()
+        {
+            Console.WriteLine("Closing file in Windows OS");
+        }
+    }
+}

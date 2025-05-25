@@ -6,4 +6,12 @@
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <Compile Include="ObjectModellingClass\Patterns\Builder\doc.md" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="ObjectModellingClass\Patterns\AbstractFactory\Diagrams\" />
+	</ItemGroup>
+
 </Project>

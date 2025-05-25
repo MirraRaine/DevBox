@@ -12,7 +12,7 @@ namespace DevExercises
     /// </summary>
     public static class StringDecoder
     {
-        public static string Decode(this String encodedString)
+        public static string Decode(this string encodedString)
         {
             (Stack<char> charStacks, Stack<int?> numStacks) = PopulateStacks(encodedString);
 
@@ -85,7 +85,7 @@ namespace DevExercises
                         throw new InvalidOperationException("Invalid numeric value in stack.");
                     }
 
-                    String segmentToReplicate = result.ToString();
+                    string segmentToReplicate = result.ToString();
 
                     while (timesToReplicate > 1)
                     {
