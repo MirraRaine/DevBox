@@ -8,12 +8,12 @@
             return null;
         }
 
-        public void GenerateOraclePDFReport(String tableName, Connection con)
+        public void GenerateOraclePDFReport(string tableName, Connection con)
         {
             //get data from table and Generate pdf report
         }
 
-        public void GenerateOracleHTMLReport(String tableName, Connection con)
+        public void GenerateOracleHTMLReport(string tableName, Connection con)
         {
             //get data from table and Generate pdf report
         }

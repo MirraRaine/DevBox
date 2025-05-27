@@ -8,7 +8,7 @@ namespace UniversityHomeworksTests.ObjectModellingClass
         [TestMethod]
         public void Client_Test()
         {
-            String tableName = "Employee";
+            string tableName = "Employee";
 
             //generating MySql HTML report and Oracle PDF report without using Facade
             Connection con = MySqlHelper.GetMySqlDBConnection();

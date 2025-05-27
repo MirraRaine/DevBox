@@ -2,7 +2,7 @@
 {
     public class HelperFacade
     {
-        public static void GenerateReport(DBTypes dbType, ReportTypes reportType, String tableName)
+        public static void GenerateReport(DBTypes dbType, ReportTypes reportType, string tableName)
         {
             Connection con = null;
             switch (dbType)

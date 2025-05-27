@@ -8,12 +8,12 @@
             return null;
         }
 
-        public void GenerateMySqlPDFReport(String tableName, Connection con)
+        public void GenerateMySqlPDFReport(string tableName, Connection con)
         {
             //get data from table and generate pdf report
         }
 
-        public void GenerateMySqlHTMLReport(String tableName, Connection con)
+        public void GenerateMySqlHTMLReport(string tableName, Connection con)
         {
             //get data from table and generate pdf report
         }

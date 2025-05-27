@@ -2,7 +2,7 @@
 {
     public class ComputerFactory
     {
-        public static Computer GetComputer(String type, String ram, String hdd, String cpu)
+        public static Computer GetComputer(string type, String ram, String hdd, String cpu)
         {
 
             if ("PC".Equals(type, StringComparison.OrdinalIgnoreCase)) { return new PC(ram, hdd, cpu); }
