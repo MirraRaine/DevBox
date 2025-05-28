@@ -1,10 +1,13 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.AbstractFactory
 {
+    /// <summary>
+    /// Concrete implementation of the `IShape` interface that represents a rectangle shape.
+    /// </summary>
     public class Rectangle : IShape
     {
-        public void Draw()
+        public string Draw()
         {
-            Console.WriteLine("Rectangle");
+            return "Rectangle";
         }
     }
 }

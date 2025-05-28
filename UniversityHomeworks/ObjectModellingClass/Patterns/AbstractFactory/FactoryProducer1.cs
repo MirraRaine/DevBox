@@ -1,12 +1,14 @@
 ﻿
 namespace UniversityHomeworks.ObjectModellingClass.Patterns.AbstractFactory
 {
-    public class FactoryProducer : IAbstractFactory
+    /// <summary>
+    /// Concrete factory that creates a `Blue` color and a `Rectangle` shape.
+    /// </summary>
+    public class FactoryProducer1 : IAbstractFactory
     {
         public IColor GetColor()
         {
-            return new Red();
-
+            return new Blue();
         }
 
         public IShape GetShape()

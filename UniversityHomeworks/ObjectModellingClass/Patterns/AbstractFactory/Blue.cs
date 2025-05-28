@@ -1,10 +1,13 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.AbstractFactory
 {
+    /// <summary>
+    /// Concrete implementation of the `IColor` interface that represents the color blue.
+    /// </summary>
     public class Blue : IColor
     {
-        public void Fill()
+        public string Fill()
         {
-            Console.WriteLine("Blue");
+            return "Blue";
         }
     }
 }

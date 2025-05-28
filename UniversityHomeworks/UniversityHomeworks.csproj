@@ -11,6 +11,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Folder Include="ObjectModellingClass\Patterns\AbstractFactoryV2\Diagrams\" />
 	  <Folder Include="ObjectModellingClass\Patterns\AbstractFactory\Diagrams\" />
 	</ItemGroup>
 
