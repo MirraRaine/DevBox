@@ -1,30 +1,29 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.Adapter
 {
+    /// <summary>
+    /// Client class that uses the IMediaPlayer interface to play various media types.
+    /// Delegates non-mp3 formats to a MediaAdapter.
+    /// </summary>
     public class AudioPlayer : IMediaPlayer
     {
+        private MediaAdapter? mediaAdapter;
 
-        MediaAdapter mediaAdapter;
-
-        public void Play(string audioType, string fileName)
+        /// <inheritdoc/>
+        public string Play(string audioType, string fileName)
         {
-
-            //inbuilt support to play mp3 music files
             if (audioType.Equals("mp3", StringComparison.OrdinalIgnoreCase))
             {
-                Console.WriteLine("Playing mp3 file. Name: " + fileName);
+                return $"Playing mp3 file. Name: {fileName}";
             }
-
-            //mediaAdapter is providing support to play other file formats
-
-            else if (audioType.Equals("vlc", StringComparison.OrdinalIgnoreCase) || audioType.Equals("mp4", StringComparison.OrdinalIgnoreCase))
+            else if (audioType.Equals("vlc", StringComparison.OrdinalIgnoreCase) ||
+                     audioType.Equals("mp4", StringComparison.OrdinalIgnoreCase))
             {
-                mediaAdapter = new MediaAdapter(audioType);
-                mediaAdapter.Play(audioType, fileName);
+                this.mediaAdapter = new MediaAdapter(audioType);
+                return this.mediaAdapter.Play(audioType, fileName);
             }
-
             else
             {
-                Console.WriteLine("Invalid media. " + audioType + " format not supported");
+                throw new NotSupportedException("Invalid media. " + audioType + " format not supported");
             }
         }
     }

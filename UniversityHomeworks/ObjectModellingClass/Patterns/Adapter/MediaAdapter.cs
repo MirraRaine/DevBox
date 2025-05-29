@@ -1,33 +1,39 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.Adapter
 {
+    /// <summary>
+    /// Adapter class that allows AudioPlayer (which uses IMediaPlayer) to
+    /// play formats supported by IAdvancedMediaPlayer (e.g., mp4, vlc).
+    /// </summary>
     public class MediaAdapter : IMediaPlayer
     {
-        IAdvancedMediaPlayer advancedMusicPlayer;
+        private readonly IAdvancedMediaPlayer advancedMusicPlayer;
+        private readonly string format;
 
+        /// <summary>
+        /// Initializes a new instance of the MediaAdapter with the given format.
+        /// </summary>
+        /// <param name="audioType">The audio format to adapt (mp4 or vlc).</param>
         public MediaAdapter(string audioType)
         {
-
-            if (audioType.Equals("vlc", StringComparison.OrdinalIgnoreCase))
+            format = audioType.ToLowerInvariant();
+            advancedMusicPlayer = format switch
             {
-                advancedMusicPlayer = new VlcPlayer();
-
-            }
-            else if (audioType.Equals("mp4", StringComparison.OrdinalIgnoreCase))
-            {
-                advancedMusicPlayer = new Mp4Player();
-            }
+                "vlc" => new VlcPlayer(),
+                "mp4" => new Mp4Player(),
+                _ => throw new NotSupportedException($"Format {audioType} not supported.")
+            };
         }
 
-        public void Play(string audioType, string fileName)
+        public string Play(string audioType, string fileName)
         {
-
-            if (audioType.Equals("vlc", StringComparison.OrdinalIgnoreCase))
+            switch (format)
             {
-                advancedMusicPlayer.PlayVlc(fileName);
-            }
-            else if (audioType.Equals("mp4", StringComparison.OrdinalIgnoreCase))
-            {
-                advancedMusicPlayer.PlayMp4(fileName);
+                case "vlc":
+                    return advancedMusicPlayer.PlayVlc(fileName);
+                case "mp4":
+                    return advancedMusicPlayer.PlayMp4(fileName);
+                default:
+                    throw new NotSupportedException("Not supported format");
             }
         }
     }

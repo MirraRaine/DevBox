@@ -13,6 +13,7 @@
 	<ItemGroup>
 	  <Folder Include="ObjectModellingClass\Patterns\AbstractFactoryV2\Diagrams\" />
 	  <Folder Include="ObjectModellingClass\Patterns\AbstractFactory\Diagrams\" />
+	  <Folder Include="ObjectModellingClass\Patterns\Adapter\Diagrams\" />
 	</ItemGroup>
 
 </Project>

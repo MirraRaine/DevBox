@@ -1,6 +1,6 @@
 ﻿using UniversityHomeworks.ObjectModellingClass.Patterns.AbstractFactoryV2;
 
-namespace UniversityHomeworksTests.ObjectModellingClass
+namespace UniversityHomeworksTests.Patterns
 {
     /// <summary>
     /// Test class to validate functionality of the <see cref="Patterns.AbstractFactory"/> pattern.

@@ -1,15 +1,20 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.Adapter
 {
-    public class VlcPlayer : IAdvancedMediaPlayer
+    /// <summary>
+    /// Concrete implementation of IAdvancedMediaPlayer to play VLC files.
+    /// </summary>
+    internal class VlcPlayer : IAdvancedMediaPlayer
     {
-        public void PlayVlc(string fileName)
+        /// <inheritdoc/>
+        public string PlayVlc(string fileName)
         {
-            Console.WriteLine("Playing vlc file. Name: " + fileName); //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            return $"Playing vlc file. Name: {fileName}";
         }
 
-        public void PlayMp4(string fileName)
+        /// <inheritdoc/>
+        public string PlayMp4(string fileName)
         {
-            //do nothing //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            throw new NotSupportedException("Not supported format");
         }
     }
 }
