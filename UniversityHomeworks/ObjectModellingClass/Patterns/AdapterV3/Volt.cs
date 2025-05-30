@@ -1,22 +1,15 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.AdapterV3
 {
+    /// <summary>
+    /// Represents a voltage value.
+    /// </summary>
     public class Volt
     {
-        private int volts;
+        public int Volts { get; set; }
 
-        public Volt(int v)
+        public Volt(int volts)
         {
-            this.volts = v;
-        }
-
-        public int GetVolts()
-        {
-            return volts;
-        }
-
-        public void SetVolts(int volts)
-        {
-            this.volts = volts;
+            Volts = volts;
         }
     }
 }
