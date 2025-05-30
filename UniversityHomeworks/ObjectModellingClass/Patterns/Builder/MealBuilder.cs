@@ -1,18 +1,27 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.Builder
 {
+    /// <summary>
+    /// Builder class that constructs specific meal combinations.
+    /// </summary>
     public class MealBuilder
     {
-        public Meal prepareVegMeal()
+        /// <summary>
+        /// Builds a vegetarian meal (VegBurger + Coke).
+        /// </summary>
+        public Meal PrepareVegMeal()
         {
-            Meal meal = new Meal();
+            var meal = new Meal();
             meal.AddItem(new VegBurger());
             meal.AddItem(new Coke());
             return meal;
         }
 
-        public Meal prepareNonVegMeal()
+        /// <summary>
+        /// Builds a non-vegetarian meal (ChickenBurger + Pepsi).
+        /// </summary>
+        public Meal PrepareNonVegMeal()
         {
-            Meal meal = new Meal();
+            var meal = new Meal();
             meal.AddItem(new ChickenBurger());
             meal.AddItem(new Pepsi());
             return meal;

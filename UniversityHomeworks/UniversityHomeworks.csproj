@@ -11,10 +11,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="ObjectModellingClass\Patterns\AbstractFactoryV2\Diagrams\" />
-	  <Folder Include="ObjectModellingClass\Patterns\AbstractFactory\Diagrams\" />
-	  <Folder Include="ObjectModellingClass\Patterns\AdapterV3\docs\" />
-	  <Folder Include="ObjectModellingClass\Patterns\Adapter\Diagrams\" />
+	  <Folder Include="ObjectModellingClass\Patterns\AbstractFactoryV2\Docs\" />
+	  <Folder Include="ObjectModellingClass\Patterns\AbstractFactory\Docs\" />
+	  <Folder Include="ObjectModellingClass\Patterns\AdapterV3\Docs\" />
+	  <Folder Include="ObjectModellingClass\Patterns\Adapter\Docs\" />
+	  <Folder Include="ObjectModellingClass\Patterns\Builder\Docs\" />
 	</ItemGroup>
 
 </Project>

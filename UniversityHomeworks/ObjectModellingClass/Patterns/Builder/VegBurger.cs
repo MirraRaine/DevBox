@@ -1,15 +1,11 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.Builder
 {
+    /// <summary>
+    /// Concrete implementation of a vegetarian burger.
+    /// </summary>
     public class VegBurger : Burger
     {
-        public string Name()
-        {
-            return "Veg Burger";
-        }
-
-        public override float Price()
-        {
-            return 25.0f;
-        }
+        public override string Name() => "Veg Burger";
+        public override float Price() => 25.0f;
     }
 }

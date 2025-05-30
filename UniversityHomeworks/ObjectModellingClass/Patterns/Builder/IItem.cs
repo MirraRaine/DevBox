@@ -1,9 +1,12 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.Builder
 {
+    /// <summary>
+    /// Item interface represents a food or drink item in the meal.
+    /// </summary>
     public interface IItem
     {
-        public string Name();
-        public IPacking Packing();
-        public float Price();
+        string Name();
+        IPacking Packing();
+        float Price();
     }
 }
