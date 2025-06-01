@@ -18,6 +18,7 @@
 	  <Folder Include="ObjectModellingClass\Patterns\Builder2\Docs\" />
 	  <Folder Include="ObjectModellingClass\Patterns\Builder3\Docs\" />
 	  <Folder Include="ObjectModellingClass\Patterns\Builder\Docs\" />
+	  <Folder Include="ObjectModellingClass\Patterns\Command\Docs\" />
 	</ItemGroup>
 
 </Project>

@@ -1,17 +1,25 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.Command
 {
+    /// <summary>
+    /// Concrete command to buy stock.
+    /// </summary>
     public class BuyStock : IOrder
     {
-        private Stock abcStock;
+        private readonly Stock stock;
 
-        public BuyStock(Stock abcStock)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BuyStock"/> class.
+        /// </summary>
+        /// <param name="stock">The stock receiver object.</param>
+        public BuyStock(Stock stock)
         {
-            this.abcStock = abcStock;
+            this.stock = stock;
         }
 
+        /// <inheritdoc />
         public void Execute()
         {
-            abcStock.Buy();
+            stock.Buy();
         }
     }
 }
