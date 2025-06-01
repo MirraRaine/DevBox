@@ -6,16 +6,37 @@ namespace UniversityHomeworksTests.ObjectModellingClass
     public class BuilderPatternV3Tests
     {
         [TestMethod]
-        public void Client_Test()
+        public void HawaiianPizzaBuilder_ShouldBuildCorrectPizza()
         {
-            Waiter waiter = new Waiter();
+            // Arrange
+            var waiter = new Waiter();
+            var hawaiianBuilder = new HawaiianPizzaBuilder();
 
-            PizzaBuilder hawaiianPizzaBuilder = new HawaiianPizzaBuilder();
-            waiter.SetPizzaBuilder(hawaiianPizzaBuilder);
-
+            // Act
+            waiter.SetPizzaBuilder(hawaiianBuilder);
             waiter.ConstructPizza();
+            var pizza = waiter.GetPizza();
+            var pizzaDescription = pizza.ToString();
 
-            Pizza pizza = waiter.GetPizza();
+            // Assert
+            Assert.AreEqual("Pizza with cross dough, mild sauce, and ham + pineapple topping(s).", pizzaDescription);
+        }
+
+        [TestMethod]
+        public void SpicyPizzaBuilder_ShouldBuildCorrectPizza()
+        {
+            // Arrange
+            var waiter = new Waiter();
+            var spicyBuilder = new SpicyPizzaBuilder();
+
+            // Act
+            waiter.SetPizzaBuilder(spicyBuilder);
+            waiter.ConstructPizza();
+            var pizza = waiter.GetPizza();
+            var pizzaDescription = pizza.ToString();
+
+            // Assert
+            Assert.AreEqual("Pizza with pan baked dough, hot sauce, and pepperoni + salami topping(s).", pizzaDescription);
         }
     }
 }

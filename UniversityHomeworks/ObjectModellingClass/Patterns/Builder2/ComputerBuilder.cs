@@ -1,37 +1,51 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.Builder2
 {
-    //Builder Class
+    /// <summary>
+    /// Builder class for constructing a <see cref="Computer"/> object step-by-step.
+    /// </summary>
     public class ComputerBuilder
     {
-        // required parameters
-        public string HDD;
-        public string RAM;
+        // Required parameters
+        public string HDD { get; }
+        public string RAM { get; }
 
-        // optional parameters
-        public bool IsGraphicsCardEnabled;
-        public bool IsBluetoothEnabled;
+        // Optional parameters
+        public bool IsGraphicsCardEnabled { get; private set; }
+        public bool IsBluetoothEnabled { get; private set; }
 
+        /// <summary>
+        /// Initializes a builder with required HDD and RAM values.
+        /// </summary>
         public ComputerBuilder(string hdd, string ram)
         {
-            this.HDD = hdd;
-            this.RAM = ram;
+            HDD = hdd;
+            RAM = ram;
         }
 
-        public ComputerBuilder SetGraphicsCardEnabled(bool isGraphicsCardEnabled)
+        /// <summary>
+        /// Enables or disables the graphics card.
+        /// </summary>
+        public ComputerBuilder SetGraphicsCardEnabled(bool enabled)
         {
-            this.IsGraphicsCardEnabled = isGraphicsCardEnabled;
+            IsGraphicsCardEnabled = enabled;
             return this;
         }
 
-        public ComputerBuilder SetBluetoothEnabled(bool isBluetoothEnabled)
+        /// <summary>
+        /// Enables or disables Bluetooth.
+        /// </summary>
+        public ComputerBuilder SetBluetoothEnabled(bool enabled)
         {
-            this.IsBluetoothEnabled = isBluetoothEnabled;
+            IsBluetoothEnabled = enabled;
             return this;
         }
 
-        public Comp Build()
+        /// <summary>
+        /// Builds and returns the configured <see cref="Computer"/> object.
+        /// </summary>
+        public Computer Build()
         {
-            return new Comp(this);
+            return new Computer(this);
         }
     }
 }

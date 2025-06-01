@@ -1,14 +1,25 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.Builder3
 {
-    /** "Director" */
+    /// <summary>
+    /// The Director class that defines the order of building steps.
+    /// </summary>
     public class Waiter
     {
         private PizzaBuilder pizzaBuilder;
+        
+        /// <summary>
+        /// Sets the builder instance used by the director.
+        /// </summary>
+        public void SetPizzaBuilder(PizzaBuilder pb) => this.pizzaBuilder = pb;
 
-        public void SetPizzaBuilder(PizzaBuilder pb) { pizzaBuilder = pb; }
+        /// <summary>
+        /// Gets the pizza that has been constructed.
+        /// </summary>
+        public Pizza GetPizza() => this.pizzaBuilder.GetPizza();
 
-        public Pizza GetPizza() { return pizzaBuilder.GetPizza(); }
-
+        /// <summary>
+        /// Orchestrates the building of the pizza in the defined sequence.
+        /// </summary>
         public void ConstructPizza()
         {
             pizzaBuilder.CreateNewPizzaProduct();

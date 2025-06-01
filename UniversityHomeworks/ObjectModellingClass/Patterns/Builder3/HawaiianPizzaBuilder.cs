@@ -1,5 +1,8 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.Builder3
 {
+    /// <summary>
+    /// Concrete builder for creating a Hawaiian pizza.
+    /// </summary>
     public class HawaiianPizzaBuilder : PizzaBuilder
     {
         public override void BuildDough()
@@ -14,7 +17,7 @@
 
         public override void BuildTopping()
         {
-            pizza.SetTopping("ham+pineapple");
+            pizza.SetTopping("ham + pineapple");
         }
     }
 }

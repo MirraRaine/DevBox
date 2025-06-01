@@ -15,6 +15,8 @@
 	  <Folder Include="ObjectModellingClass\Patterns\AbstractFactory\Docs\" />
 	  <Folder Include="ObjectModellingClass\Patterns\AdapterV3\Docs\" />
 	  <Folder Include="ObjectModellingClass\Patterns\Adapter\Docs\" />
+	  <Folder Include="ObjectModellingClass\Patterns\Builder2\Docs\" />
+	  <Folder Include="ObjectModellingClass\Patterns\Builder3\Docs\" />
 	  <Folder Include="ObjectModellingClass\Patterns\Builder\Docs\" />
 	</ItemGroup>
 
