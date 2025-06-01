@@ -38,7 +38,7 @@ namespace UniversityHomeworksTests.ObjectModellingClass
             OMOSet original = new OMOSet();
             original.Add(1);
             original.Add(2);
-            OMOSetView copy = original.Copy();
+            IOMOSetView copy = original.Copy();
 
             Assert.IsTrue(copy.Contains(1));
             Assert.IsTrue(copy.Contains(2));
@@ -208,7 +208,7 @@ namespace UniversityHomeworksTests.ObjectModellingClass
             B.Add(3);
 
             OMOSetUnion union = new OMOSetUnion(A, B);
-            OMOSetView copy = union.Copy();
+            IOMOSetView copy = union.Copy();
 
             Assert.IsTrue(copy.Contains(1));
             Assert.IsTrue(copy.Contains(2));
@@ -234,7 +234,7 @@ namespace UniversityHomeworksTests.ObjectModellingClass
             B.Add(3);
 
             OMOSetIntersection intersection = new OMOSetIntersection(A, B);
-            OMOSetView copy = intersection.Copy();
+            IOMOSetView copy = intersection.Copy();
 
             Assert.IsFalse(copy.Contains(1));
             Assert.IsTrue(copy.Contains(2));
@@ -260,7 +260,7 @@ namespace UniversityHomeworksTests.ObjectModellingClass
             B.Add(3);
 
             OMOSetComplement complement = new OMOSetComplement(A, B);
-            OMOSetView copy = complement.Copy();
+            IOMOSetView copy = complement.Copy();
 
             Assert.IsTrue(copy.Contains(1));
             Assert.IsFalse(copy.Contains(2));

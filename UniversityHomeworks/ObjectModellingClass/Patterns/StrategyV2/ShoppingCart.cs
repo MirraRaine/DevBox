@@ -33,7 +33,7 @@
             return sum;
         }
 
-        public void Pay(PaymentStrategy paymentMethod)
+        public void Pay(IPaymentStrategy paymentMethod)
         {
             int amount = CalculateTotal();//складывает всё, что есть на карте
             paymentMethod.Pay(amount);

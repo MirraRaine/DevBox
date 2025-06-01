@@ -2,19 +2,19 @@
 {
     public class Context
     {
-        private State state;
+        private IState state;
 
         public Context()
         {
             state = null;
         }
 
-        public void SetState(State state)
+        public void SetState(IState state)
         {
             this.state = state;
         }
 
-        public State GetState()
+        public IState GetState()
         {
             return state;
         }

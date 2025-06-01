@@ -1,15 +1,15 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.ObserverV2
 {
-    public interface Subject
+    public interface ISubject
     {
         //methods to register and unregister observers
-        public void Register(Observer obj);
-        public void Unregister(Observer obj);
+        public void Register(IObserver obj);
+        public void Unregister(IObserver obj);
 
         //method to notify observers of change
         public void NotifyObservers();
 
         //method to get updates from subject
-        public object GetUpdate(Observer obj);
+        public object GetUpdate(IObserver obj);
     }
 }

@@ -3,24 +3,24 @@
     /// <summary>
     /// Class representing the intersection of two sets: A ∩ B.
     /// </summary>
-    public class OMOSetIntersection : OMOSetView
+    public class OMOSetIntersection : IOMOSetView
     {
         /// <summary>
         /// Reference to the first set (A).
         /// </summary>
-        private readonly OMOSetView setA;
+        private readonly IOMOSetView setA;
 
         /// <summary>
         /// Reference to the second set (B).
         /// </summary>
-        private readonly OMOSetView setB;
+        private readonly IOMOSetView setB;
 
         /// <summary>
         /// Constructor for the class, initializes with two sets.
         /// </summary>
         /// <param name="setA">The first set.</param>
         /// <param name="setB">The second set.</param>
-        public OMOSetIntersection(OMOSetView setA, OMOSetView setB)
+        public OMOSetIntersection(IOMOSetView setA, IOMOSetView setB)
         {
             this.setA = setA;
             this.setB = setB;
@@ -49,7 +49,7 @@
         /// Method that returns a copy of the intersection set.
         /// </summary>
         /// <returns>A new instance representing the same intersection set.</returns>
-        public OMOSetView Copy()
+        public IOMOSetView Copy()
         {
             return new OMOSetIntersection(this.setA.Copy(), this.setB.Copy());
         }
@@ -58,7 +58,7 @@
         /// Method that computes and returns a new set containing elements common to both sets.
         /// </summary>
         /// <returns>A new OMOSet representing the intersection.</returns>
-        private OMOSetView Intersection()
+        private IOMOSetView Intersection()
         {
             var arrayA = this.setA.ToArray();
             var arrayB = this.setB.ToArray();

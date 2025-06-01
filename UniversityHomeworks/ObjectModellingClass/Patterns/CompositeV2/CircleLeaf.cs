@@ -1,6 +1,6 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.CompositeV2
 {
-    public class CircleLeaf : ShapeComponent
+    public class CircleLeaf : IShapeComponent
     {
         public void Draw(string fillColor)
         {

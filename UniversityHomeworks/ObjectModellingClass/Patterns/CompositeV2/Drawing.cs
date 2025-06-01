@@ -1,27 +1,27 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.CompositeV2
 {
     //composite
-    public class Drawing : ShapeComponent
+    public class Drawing : IShapeComponent
     {
         //collection of Shapes
-        private List<ShapeComponent> shapes = new List<ShapeComponent>();
+        private List<IShapeComponent> shapes = new List<IShapeComponent>();
 
         public void Draw(String fillColor)
         {
-            foreach (ShapeComponent sh in shapes)
+            foreach (IShapeComponent sh in shapes)
             {
                 sh.Draw(fillColor);
             }
         }
 
         //Adding shape to drawing
-        public void Add(ShapeComponent s)
+        public void Add(IShapeComponent s)
         {
             this.shapes.Add(s);
         }
 
         //removing shape from drawing
-        public void Remove(ShapeComponent s)
+        public void Remove(IShapeComponent s)
         {
             shapes.Remove(s);
         }

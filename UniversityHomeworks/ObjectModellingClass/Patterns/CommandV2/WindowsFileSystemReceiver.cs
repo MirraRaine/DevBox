@@ -1,6 +1,6 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.CommandV2
 {
-    public class WindowsFileSystemReceiver : FileSystemReceiver
+    public class WindowsFileSystemReceiver : IFileSystemReceiver
     {
         public void OpenFile()
         {

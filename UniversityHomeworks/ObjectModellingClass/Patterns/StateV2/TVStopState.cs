@@ -1,6 +1,6 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.StateV2
 {
-    public class TVStopState : State
+    public class TVStopState : IState
     {
         public void DoAction()
         {

@@ -1,6 +1,6 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.StateV3
 {
-    public class HUNGRY : State
+    public class HUNGRY : IState
     {
         public HUNGRY()
         {

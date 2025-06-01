@@ -1,6 +1,6 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.VisitorV2
 {
-    public class ShoppingCartVisitorImpl : ShoppingCartVisitor
+    public class ShoppingCartVisitorImpl : IShoppingCartVisitor
     {
         public int Visit(Book book)
         {

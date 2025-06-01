@@ -1,6 +1,6 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.State
 {
-    public class StopState : State
+    public class StopState : IState
     {
         public void DoAction(Context context)
         {

@@ -1,9 +1,9 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.ObserverV2
 {
-    public class MyTopicSubscriber : Observer
+    public class MyTopicSubscriber : IObserver
     {
         private string name;
-        private Subject topic;
+        private ISubject topic;
 
         public MyTopicSubscriber(string nm)
         {
@@ -21,7 +21,7 @@
                 Console.WriteLine(name + ":: Consuming message::" + msg);
         }
 
-        public void SetSubject(Subject sub)
+        public void SetSubject(ISubject sub)
         {
             this.topic = sub;
         }

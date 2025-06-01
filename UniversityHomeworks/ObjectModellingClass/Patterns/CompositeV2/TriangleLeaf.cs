@@ -1,6 +1,6 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.CompositeV2
 {
-    public class TriangleLeaf : ShapeComponent
+    public class TriangleLeaf : IShapeComponent
     {
         public void Draw(string fillColor)
         {

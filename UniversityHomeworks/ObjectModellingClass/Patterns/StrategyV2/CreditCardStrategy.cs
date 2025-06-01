@@ -1,6 +1,6 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.StrategyV2
 {
-    public class CreditCardStrategy : PaymentStrategy
+    public class CreditCardStrategy : IPaymentStrategy
     {
         private string name;
         private string cardNumber;

@@ -1,6 +1,6 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.StrategyV2
 {
-    public class PaypalStrategy : PaymentStrategy
+    public class PaypalStrategy : IPaymentStrategy
     {
         private string emailId;
         private string password;

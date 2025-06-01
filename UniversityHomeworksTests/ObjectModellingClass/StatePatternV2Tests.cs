@@ -19,8 +19,8 @@ namespace UniversityHomeworksTests.ObjectModellingClass
             // ...
 
             TVContext context = new TVContext();
-            State tvStartState = new TVStartState();
-            State tvStopState = new TVStopState();
+            IState tvStartState = new TVStartState();
+            IState tvStopState = new TVStopState();
 
             context.SetState(tvStartState);
             context.DoAction();

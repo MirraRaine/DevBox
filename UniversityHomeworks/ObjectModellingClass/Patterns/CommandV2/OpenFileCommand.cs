@@ -1,19 +1,19 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.CommandV2
 {
-    public class OpenFileCommand : Command
+    public class OpenFileCommand : ICommand
     {
 
-        private FileSystemReceiver fileSystem;
+        private IFileSystemReceiver fileSystemReceiver;
 
-        public OpenFileCommand(FileSystemReceiver fs)
+        public OpenFileCommand(IFileSystemReceiver fileSystemReceiver)
         {
-            this.fileSystem = fs;
+            this.fileSystemReceiver = fileSystemReceiver;
         }
 
         public void Execute()
         {
             //open command is forwarding request to openFile method
-            this.fileSystem.OpenFile();
+            this.fileSystemReceiver.OpenFile();
         }
 
     }

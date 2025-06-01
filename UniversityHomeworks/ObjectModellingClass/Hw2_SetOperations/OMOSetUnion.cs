@@ -3,24 +3,24 @@
     /// <summary>
     /// Class representing the union of two sets: A ∪ B.
     /// </summary>
-    public class OMOSetUnion : OMOSetView
+    public class OMOSetUnion : IOMOSetView
     {
         /// <summary>
         /// Reference to the first set (A).
         /// </summary>
-        private readonly OMOSetView setA;
+        private readonly IOMOSetView setA;
 
         /// <summary>
         /// Reference to the second set (B).
         /// </summary>
-        private readonly OMOSetView setB;
+        private readonly IOMOSetView setB;
 
         /// <summary>
         /// Constructor for the class, initializes with two sets.
         /// </summary>
         /// <param name="setA">The first set.</param>
         /// <param name="setB">The second set.</param>
-        public OMOSetUnion(OMOSetView setA, OMOSetView setB)
+        public OMOSetUnion(IOMOSetView setA, IOMOSetView setB)
         {
             this.setA = setA;
             this.setB = setB;
@@ -49,7 +49,7 @@
         /// Method that returns a copy of the union set.
         /// </summary>
         /// <returns>A new instance representing the same union set.</returns>
-        public OMOSetView Copy()
+        public IOMOSetView Copy()
         {
             return new OMOSetUnion(this.setA.Copy(), this.setB.Copy());
         }
@@ -58,7 +58,7 @@
         /// Method that computes and returns a new set containing all elements from both sets.
         /// </summary>
         /// <returns>A new OMOSet representing the union.</returns>
-        public OMOSetView Union()
+        public IOMOSetView Union()
         {
             OMOSet setC = new OMOSet();
             int?[] A = this.setA.ToArray();

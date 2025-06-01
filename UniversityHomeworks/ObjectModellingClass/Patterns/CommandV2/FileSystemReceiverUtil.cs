@@ -2,7 +2,7 @@
 {
     public class FileSystemReceiverUtil
     {
-        public static FileSystemReceiver GetUnderlyingFileSystem()
+        public static IFileSystemReceiver GetUnderlyingFileSystem()
         {
             string osName = System.Runtime.InteropServices.RuntimeInformation.OSDescription;//System.GetProperty("os.name");
 

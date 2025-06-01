@@ -3,19 +3,19 @@ using UniversityHomeworks.ObjectModellingClass.Patterns.Observer;
 
 namespace UniversityHomeworks.ObjectModellingClass.Patterns.ObserverV2
 {
-    public class MyTopic : Subject
+    public class MyTopic : ISubject
     {
-        private List<Observer> observers;
+        private List<IObserver> observers;
         private string message;
         private bool changed;
         private readonly object MUTEX = new object();
 
         public MyTopic()
         {
-            this.observers = new List<Observer>();
+            this.observers = new List<IObserver>();
         }
 
-        public void Register(Observer obj)
+        public void Register(IObserver obj)
         {
             if (obj == null) throw new ArgumentNullException(nameof(obj), "Null Observer");
 
@@ -28,7 +28,7 @@ namespace UniversityHomeworks.ObjectModellingClass.Patterns.ObserverV2
             }
         }
 
-        public void Unregister(Observer obj)
+        public void Unregister(IObserver obj)
         {
             lock (MUTEX)
             {
@@ -38,7 +38,7 @@ namespace UniversityHomeworks.ObjectModellingClass.Patterns.ObserverV2
 
         public void NotifyObservers()
         {
-            List<Observer> observersLocal;
+            List<IObserver> observersLocal;
 
             // Synchronization ensures observers added after state change aren't notified
             lock (MUTEX)
@@ -46,17 +46,17 @@ namespace UniversityHomeworks.ObjectModellingClass.Patterns.ObserverV2
                 if (!changed)
                     return;
 
-                observersLocal = new List<Observer>(this.observers);
+                observersLocal = new List<IObserver>(this.observers);
                 this.changed = false;
             }
 
-            foreach (Observer observer in observersLocal)
+            foreach (IObserver observer in observersLocal)
             {
                 observer.Update();
             }
         }
 
-        public object GetUpdate(Observer obj)
+        public object GetUpdate(IObserver obj)
         {
             return this.message;
         }

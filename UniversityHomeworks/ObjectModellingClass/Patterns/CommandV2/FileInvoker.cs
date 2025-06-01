@@ -2,11 +2,11 @@
 {
     public class FileInvoker
     {
-        public Command command;
+        public ICommand command;
 
-        public FileInvoker(Command c)
+        public FileInvoker(ICommand command)
         {
-            this.command = c;
+            this.command = command;
         }
 
         public void Execute()

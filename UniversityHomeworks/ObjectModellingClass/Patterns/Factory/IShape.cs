@@ -1,6 +1,6 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.Factory
 {
-    public interface Shape
+    public interface IShape
     {
         void Draw();
     }

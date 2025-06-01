@@ -3,7 +3,7 @@
     public class ShapeFactory
     {
         //use getShape method to get object of type shape 
-        public Shape GetShape(string shapeType)
+        public IShape GetShape(string shapeType)
         {
             if (shapeType == null)
             {

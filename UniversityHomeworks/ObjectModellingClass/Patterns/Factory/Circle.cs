@@ -1,6 +1,6 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.Factory
 {
-    public class Circle : Shape
+    public class Circle : IShape
     {
         public void Draw()
         {

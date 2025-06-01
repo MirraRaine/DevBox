@@ -1,10 +1,10 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.CommandV2
 {
-    public class WriteFileCommand : Command
+    public class WriteFileCommand : ICommand
     {
-        private FileSystemReceiver fileSystem;
+        private IFileSystemReceiver fileSystem;
 
-        public WriteFileCommand(FileSystemReceiver fs)
+        public WriteFileCommand(IFileSystemReceiver fs)
         {
             this.fileSystem = fs;
         }

@@ -1,15 +1,15 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.StateV2
 {
-    public class TVContext : State
+    public class TVContext : IState
     {
-        private State tvState;
+        private IState tvState;
 
-        public void SetState(State state)
+        public void SetState(IState state)
         {
             this.tvState = state;
         }
 
-        public State GetState()
+        public IState GetState()
         {
             return this.tvState;
         }

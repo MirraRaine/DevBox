@@ -1,6 +1,6 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.CommandV2
 {
-    public interface FileSystemReceiver
+    public interface IFileSystemReceiver
     {
         void OpenFile();
         void WriteFile();

@@ -1,6 +1,6 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.StateV3
 {
-    public class SLEEPING : State
+    public class SLEEPING : IState
     {
         public SLEEPING()
         {

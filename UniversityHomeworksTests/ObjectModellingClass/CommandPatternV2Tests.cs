@@ -11,7 +11,7 @@ namespace UniversityHomeworksTests.ObjectModellingClass
             //Creating the receiver object
             //FileSystemReceiver fs = FileSystemReceiverUtil.getUnderlyingFileSystem();
             //FileSystemReceiver fsr = new UnixFileSystemReceiver();
-            FileSystemReceiver fsr = new WindowsFileSystemReceiver();
+            IFileSystemReceiver fsr = new WindowsFileSystemReceiver();
 
             //creating command and associating with receiver
             OpenFileCommand openFileCommand = new OpenFileCommand(fsr);

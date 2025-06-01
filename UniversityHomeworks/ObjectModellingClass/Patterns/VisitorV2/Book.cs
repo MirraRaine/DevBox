@@ -21,7 +21,7 @@
             return isbnNumber;
         }
 
-        public int Accept(ShoppingCartVisitor visitor)
+        public int Accept(IShoppingCartVisitor visitor)
         {
             return visitor.Visit(this);
         }

@@ -1,6 +1,6 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.StateV3
 {
-    public class COOL : State
+    public class COOL : IState
     {
         public COOL()
         {

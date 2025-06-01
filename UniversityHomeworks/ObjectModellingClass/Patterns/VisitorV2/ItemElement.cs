@@ -2,6 +2,6 @@
 {
     public interface ItemElement
     {
-        public int Accept(ShoppingCartVisitor visitor);
+        public int Accept(IShoppingCartVisitor visitor);
     }
 }

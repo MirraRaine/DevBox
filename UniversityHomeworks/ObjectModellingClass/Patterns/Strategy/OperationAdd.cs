@@ -1,6 +1,6 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.Strategy
 {
-    public class OperationAdd : Strategy
+    public class OperationAdd : IStrategy
     {
         public int DoOperation(int num1, int num2)
         {

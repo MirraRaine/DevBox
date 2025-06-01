@@ -3,18 +3,18 @@
     /// <summary>
     /// Class representing a set of even numbers.
     /// </summary>
-    public class OMOSetEven : OMOSetView
+    public class OMOSetEven : IOMOSetView
     {
         /// <summary>
         /// Reference to the underlying set from which even numbers are filtered.
         /// </summary>
-        private readonly OMOSetView setA;
+        private readonly IOMOSetView setA;
 
         /// <summary>
         /// Constructor for the class, initializes with a given set.
         /// </summary>
         /// <param name="setA">The underlying set.</param>
-        public OMOSetEven(OMOSetView setA)
+        public OMOSetEven(IOMOSetView setA)
         {
             this.setA = setA;
         }
@@ -33,7 +33,7 @@
         /// Method that returns a copy of the set.
         /// </summary>
         /// <returns>A new instance representing the same set of even numbers.</returns>
-        public OMOSetView Copy()
+        public IOMOSetView Copy()
         {
             return new OMOSetEven(this.setA.Copy());
         }
@@ -51,7 +51,7 @@
         /// Method that filters and returns a new set containing only even numbers from the underlying set.
         /// </summary>
         /// <returns>A new OMOSet representing the set of even numbers.</returns>
-        private OMOSetView Even()
+        private IOMOSetView Even()
         {
             OMOSet setC = new OMOSet();
             foreach (int? i in this.setA.ToArray())

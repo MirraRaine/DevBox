@@ -10,12 +10,12 @@ namespace UniversityHomeworksTests.ObjectModellingClass
         {
             Context context = new Context();
 
-            State startState = new StartState();
+            IState startState = new StartState();
             startState.DoAction(context);
 
             Console.WriteLine(context.GetState().ToString());
 
-            State stopState = new StopState();
+            IState stopState = new StopState();
             stopState.DoAction(context);
 
             Console.WriteLine(context.GetState().ToString());

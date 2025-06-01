@@ -3,7 +3,7 @@
     /// <summary>
     /// Class representing a general set, defines methods for adding and removing elements.
     /// </summary>
-    public class OMOSet : OMOSetView
+    public class OMOSet : IOMOSetView
     {
         /// <summary>
         /// HashSet storing the elements of the set. Elements are nullable integers (int?).
@@ -50,7 +50,7 @@
         /// Method that returns a copy of the set.
         /// </summary>
         /// <returns>A copy of the current set.</returns>
-        public OMOSetView Copy()
+        public IOMOSetView Copy()
         {
             OMOSet omoCopy = new OMOSet();
             foreach (int? elementHash in this.hashStorage)

@@ -1,6 +1,6 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.StrategyV2
 {
-    public interface PaymentStrategy
+    public interface IPaymentStrategy
     {
         public void Pay(int amount);
     }

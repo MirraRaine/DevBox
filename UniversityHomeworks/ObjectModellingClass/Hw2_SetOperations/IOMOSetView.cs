@@ -3,7 +3,7 @@
     /// <summary>
     /// Interface representing a view of a set, defining basic operations for sets.
     /// </summary>
-    public interface OMOSetView
+    public interface IOMOSetView
     {
         /// <summary>
         /// Checks if the set contains a specific element.
@@ -22,6 +22,6 @@
         /// Creates and returns a copy of the set.
         /// </summary>
         /// <returns>A new instance representing a copy of the current set.</returns>
-        OMOSetView Copy();
+        IOMOSetView Copy();
     }
 }

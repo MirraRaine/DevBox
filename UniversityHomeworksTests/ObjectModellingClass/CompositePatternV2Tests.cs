@@ -8,9 +8,9 @@ namespace UniversityHomeworksTests.ObjectModellingClass
         [TestMethod]
         public void Client_Test()
         {
-            ShapeComponent tri = new TriangleLeaf();
-            ShapeComponent tri1 = new TriangleLeaf();
-            ShapeComponent cir = new CircleLeaf();
+            IShapeComponent tri = new TriangleLeaf();
+            IShapeComponent tri1 = new TriangleLeaf();
+            IShapeComponent cir = new CircleLeaf();
 
             Drawing drawing = new Drawing();
             drawing.Add(tri1);

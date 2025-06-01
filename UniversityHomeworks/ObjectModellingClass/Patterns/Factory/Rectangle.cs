@@ -1,6 +1,6 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.Factory
 {
-    public class Rectangle : Shape
+    public class Rectangle : IShape
     {
         public void Draw()
         {

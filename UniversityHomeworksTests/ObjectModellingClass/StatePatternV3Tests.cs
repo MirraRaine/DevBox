@@ -10,11 +10,11 @@ namespace UniversityHomeworksTests.ObjectModellingClass
         {
             StateContext c = new StateContext();
             Princess p = new Princess("Ariel");
-            State sleepy = new SLEEPING();
+            IState sleepy = new SLEEPING();
             sleepy.Meets(c, p);
             Console.WriteLine(c.GetState());
 
-            State cool = new COOL();
+            IState cool = new COOL();
             cool.Meets(c, p);
             Console.WriteLine(c.GetState());
         }

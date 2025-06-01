@@ -2,9 +2,9 @@
 {
     public class Context
     {
-        private Strategy strategy;
+        private IStrategy strategy;
 
-        public Context(Strategy strategy)
+        public Context(IStrategy strategy)
         {
             this.strategy = strategy;
         }

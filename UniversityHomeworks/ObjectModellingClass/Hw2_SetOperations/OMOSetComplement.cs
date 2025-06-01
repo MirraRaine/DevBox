@@ -4,24 +4,24 @@
     /// Class representing A\B: the complement of set B relative to set A. 
     /// The result contains all elements that are in set A but not in set B.
     /// </summary>
-    public class OMOSetComplement : OMOSetView
+    public class OMOSetComplement : IOMOSetView
     {
         /// <summary>
         /// Reference to the first set (A).
         /// </summary>
-        private readonly OMOSetView setA;
+        private readonly IOMOSetView setA;
 
         /// <summary>
         /// Reference to the second set (B).
         /// </summary>
-        private readonly OMOSetView setB;
+        private readonly IOMOSetView setB;
 
         /// <summary>
         /// Constructor for the class, initializes with two sets.
         /// </summary>
         /// <param name="setA">The first set.</param>
         /// <param name="setB">The second set.</param>
-        public OMOSetComplement(OMOSetView setA, OMOSetView setB)
+        public OMOSetComplement(IOMOSetView setA, IOMOSetView setB)
         {
             this.setA = setA;
             this.setB = setB;
@@ -41,7 +41,7 @@
         /// Method that returns a copy of the set.
         /// </summary>
         /// <returns>A new instance representing the complement of the copied sets.</returns>
-        public OMOSetView Copy()
+        public IOMOSetView Copy()
         {
             return new OMOSetComplement(this.setA.Copy(), this.setB.Copy());
         }
@@ -59,7 +59,7 @@
         /// Method that computes and returns the complement of set B relative to set A.
         /// </summary>
         /// <returns>A new OMOSet representing the complement.</returns>
-        private OMOSetView Complement()
+        private IOMOSetView Complement()
         {
             OMOSet setC = new OMOSet();
             foreach (int? a in this.setA.ToArray())

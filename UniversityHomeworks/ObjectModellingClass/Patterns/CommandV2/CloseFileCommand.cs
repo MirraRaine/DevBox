@@ -1,10 +1,10 @@
 ﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.CommandV2
 {
-    public class CloseFileCommand : Command
+    public class CloseFileCommand : ICommand
     {
-        private FileSystemReceiver fileSystem;
+        private IFileSystemReceiver fileSystem;
 
-        public CloseFileCommand(FileSystemReceiver fs)
+        public CloseFileCommand(IFileSystemReceiver fs)
         {
             this.fileSystem = fs;
         }
