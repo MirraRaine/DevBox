@@ -18,7 +18,7 @@ they remain primarily educational in purpose.
 
 ## Purpose
 
-- **Reflection**: To look back and appreciate how much I�ve grown as a developer.
+- **Reflection**: To look back and appreciate how much I've grown as a developer.
 - **Refactoring**: odernizing the code in C# while staying true to the original logic.
 - **Practice**: Adding unit tests to old assignments to revisit testing principles.
 - **Preservation**: Keeping this work stored safely and publicly, rather than hidden away on a local drive.
