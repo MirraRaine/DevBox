@@ -6,41 +6,80 @@ namespace UniversityHomeworksTests.ObjectModellingClass
     public class CompositePatternTests
     {
         [TestMethod]
-        public void Client_Test()
+        public void Staff_ShouldReturnCorrectDetails()
         {
-            Employee CEO = new Employee("John", "CEO", 30000);
+            var staff = new Staff("John Doe", "Accounting", 50000);
 
-            Employee headSales = new Employee("Robert", "Head Sales", 20000);
+            string expected = "- Employee [Name: John Doe, Dept: Accounting, Salary: 50000]\n";
+            string actual = staff.GetDetails();
 
-            Employee headMarketing = new Employee("Michel", "Head Marketing", 20000);
+            Assert.AreEqual(expected, actual);
+        }
 
-            Employee clerk1 = new Employee("Laura", "Marketing", 10000);
-            Employee clerk2 = new Employee("Bob", "Marketing", 10000);
+        [TestMethod]
+        public void Manager_WithNoSubordinates_ShouldReturnOnlyManagerDetails()
+        {
+            var manager = new Manager("Jane Smith", "Marketing", 80000);
 
-            Employee salesExecutive1 = new Employee("Richard", "Sales", 10000);
-            Employee salesExecutive2 = new Employee("Rob", "Sales", 10000);
+            string expected = "+ Manager [Name: Jane Smith, Dept: Marketing, Salary: 80000]\n";
+            string actual = manager.GetDetails();
 
-            CEO.Add(headSales);
-            CEO.Add(headMarketing);
+            Assert.AreEqual(expected, actual);
+        }
 
-            headSales.Add(salesExecutive1);
-            headSales.Add(salesExecutive2);
+        [TestMethod]
+        public void Manager_WithSubordinates_ShouldReturnHierarchyDetails()
+        {
+            var manager = new Manager("Tom", "Engineering", 100000);
+            var dev1 = new Staff("Alice", "Engineering", 70000);
+            var dev2 = new Staff("Bob", "Engineering", 72000);
 
-            headMarketing.Add(clerk1);
-            headMarketing.Add(clerk2);
+            manager.Add(dev1);
+            manager.Add(dev2);
 
-            //print all employees of the organization
-            //Console.WriteLine(CEO); 
+            string expected =
+                "+ Manager [Name: Tom, Dept: Engineering, Salary: 100000]\n" +
+                "  - Employee [Name: Alice, Dept: Engineering, Salary: 70000]\n" +
+                "  - Employee [Name: Bob, Dept: Engineering, Salary: 72000]\n";
 
-            foreach (Employee emp in CEO.getSubordinates())
-            {
-                Console.WriteLine(emp); //там Tostring Override , поэтому нормально показывает
+            string actual = manager.GetDetails();
 
+            Assert.AreEqual(expected, actual);
+        }
 
-                //         for (Employee employee : headEmployee.getSubordinates()) {
-                //            Console.WriteLine(employee);
-                //         }
-            }
+        [TestMethod]
+        public void NestedManagers_ShouldFormatCorrectly()
+        {
+            var ceo = new Manager("Laura", "Executive", 200000);
+            var headSales = new Manager("Sara", "Sales", 120000);
+            var salesRep = new Staff("Ryan", "Sales", 60000);
+
+            headSales.Add(salesRep);
+            ceo.Add(headSales);
+
+            string expected =
+                "+ Manager [Name: Laura, Dept: Executive, Salary: 200000]\n" +
+                "  + Manager [Name: Sara, Dept: Sales, Salary: 120000]\n" +
+                "    - Employee [Name: Ryan, Dept: Sales, Salary: 60000]\n";
+
+            string actual = ceo.GetDetails();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void RemovingSubordinate_ShouldUpdateOutput()
+        {
+            var manager = new Manager("Tom", "Engineering", 100000);
+            var dev = new Staff("Alice", "Engineering", 70000);
+
+            manager.Add(dev);
+            manager.Remove(dev);
+
+            string expected = "+ Manager [Name: Tom, Dept: Engineering, Salary: 100000]\n";
+            string actual = manager.GetDetails();
+
+            Assert.AreEqual(expected, actual);
         }
     }
 }

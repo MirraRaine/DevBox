@@ -1,6 +1,6 @@
 ﻿using UniversityHomeworks.ObjectModellingClass.Patterns.Command;
 
-namespace UniversityHomeworksTests.ObjectModellingClass
+namespace UniversityHomeworksTests.Patterns
 {
     [TestClass]
     public class CommandPatternTests

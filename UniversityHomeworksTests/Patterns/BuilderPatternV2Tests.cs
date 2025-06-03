@@ -1,7 +1,7 @@
 ﻿
 using UniversityHomeworks.ObjectModellingClass.Patterns.Builder2;
 
-namespace UniversityHomeworksTests.ObjectModellingClass
+namespace UniversityHomeworksTests.Patterns
 {
     [TestClass]
     public class BuilderPatternV2Tests

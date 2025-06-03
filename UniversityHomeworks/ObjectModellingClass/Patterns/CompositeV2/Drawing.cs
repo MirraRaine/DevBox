@@ -1,36 +1,52 @@
-﻿namespace UniversityHomeworks.ObjectModellingClass.Patterns.CompositeV2
+﻿using System.Text;
+
+namespace UniversityHomeworks.ObjectModellingClass.Patterns.CompositeV2
 {
-    //composite
+    /// <summary>
+    /// Represents a composite drawing that can hold and operate on multiple shapes.
+    /// </summary>
     public class Drawing : IShapeComponent
     {
-        //collection of Shapes
-        private List<IShapeComponent> shapes = new List<IShapeComponent>();
+        private readonly List<IShapeComponent> _shapes = new();
 
-        public void Draw(String fillColor)
+        /// <summary>
+        /// Adds a shape to the drawing.
+        /// </summary>
+        /// <param name="shape">The shape to add.</param>
+        public void Add(IShapeComponent shape)
         {
-            foreach (IShapeComponent sh in shapes)
-            {
-                sh.Draw(fillColor);
-            }
+            _shapes.Add(shape);
         }
 
-        //Adding shape to drawing
-        public void Add(IShapeComponent s)
+        /// <summary>
+        /// Removes a shape from the drawing.
+        /// </summary>
+        /// <param name="shape">The shape to remove.</param>
+        public void Remove(IShapeComponent shape)
         {
-            this.shapes.Add(s);
+            _shapes.Remove(shape);
         }
 
-        //removing shape from drawing
-        public void Remove(IShapeComponent s)
-        {
-            shapes.Remove(s);
-        }
-
-        //removing all the shapes
+        /// <summary>
+        /// Clears all shapes from the drawing.
+        /// </summary>
         public void Clear()
         {
-            Console.WriteLine("Clearing all the shapes from drawing");
-            this.shapes.Clear();
+            _shapes.Clear();
+        }
+
+        /// <inheritdoc />
+        public string Draw(string fillColor)
+        {
+            var result = new StringBuilder();
+            result.AppendLine("Drawing composite with color: " + fillColor);
+
+            foreach (var shape in _shapes)
+            {
+                result.AppendLine(shape.Draw(fillColor));
+            }
+
+            return result.ToString().TrimEnd();
         }
     }
 }

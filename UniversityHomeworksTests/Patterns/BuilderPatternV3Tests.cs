@@ -1,6 +1,6 @@
 ﻿using UniversityHomeworks.ObjectModellingClass.Patterns.Builder3;
 
-namespace UniversityHomeworksTests.ObjectModellingClass
+namespace UniversityHomeworksTests.Patterns
 {
     [TestClass]
     public class BuilderPatternV3Tests
